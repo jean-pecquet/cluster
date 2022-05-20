@@ -14,20 +14,14 @@ elseif(UNIX)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp --std=c++0x")
 endif()
 
-include_directories("/home/jeanp/miniconda3/envs/puma/include/eigen3/Eigen")
-include_directories("/home/jeanp/miniconda3/envs/puma/include")
-
-# SET(DEP_LIBS "-ldl -L/home/miniconda3/pkgs -lPuMA -ltiff -lfftw3_threads -lfftw3")
-# if(APPLE)
-#     SET(DEP_LIBS "${DEP_LIBS} -lomp")
-# endif()
+include_directories("/home/jpecquet/miniconda3/envs/puma/include/eigen3/Eigen")
+include_directories("/home/jpecquet/miniconda3/envs/puma/include")
 
 add_executable(example example.cpp)
 
-# target_link_libraries(example ${DEP_LIBS})
-target_link_libraries(example "/usr/lib/x86_64-linux-gnu/libdl.so"
-			       "/home/jeanp/miniconda3/envs/puma/lib/libPuMA.so"
-			       "/home/jeanp/miniconda3/envs/puma/lib/libtiff.so"
-			       "/home/jeanp/miniconda3/envs/puma/lib/libfftw3_threads.so"
-			       "/home/jeanp/miniconda3/envs/puma/lib/libfftw3.so")
+target_link_libraries(example -ldl)
+target_link_libraries(example "/home/jpecquet/miniconda3/envs/puma/lib/libPuMA.so"
+			      "/home/jpecquet/miniconda3/envs/puma/lib/libtiff.so"
+			      "/home/jpecquet/miniconda3/envs/puma/lib/libfftw3_threads.so"
+			      "/home/jpecquet/miniconda3/envs/puma/lib/libfftw3.so")
 install(TARGETS example DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
