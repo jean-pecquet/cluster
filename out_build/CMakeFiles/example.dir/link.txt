@@ -1,1 +1,0 @@
-/usr/bin/c++  -fopenmp --std=c++0x -rdynamic CMakeFiles/example.dir/example.cpp.o -o example  -Wl,-rpath,/home/jeanp/miniconda3/envs/puma/lib::::::::::::::: -ldl /home/jeanp/miniconda3/envs/puma/lib/libPuMA.so /home/jeanp/miniconda3/envs/puma/lib/libtiff.so /home/jeanp/miniconda3/envs/puma/lib/libfftw3_threads.so /home/jeanp/miniconda3/envs/puma/lib/libfftw3.so 
