@@ -1,6 +1,6 @@
 import pumapy as puma
 
-ws_fibers = puma.generate_random_fibers((100, 100, 100), 5, None, 0.89, 20, 90, 400)
+ws_fibers = puma.generate_random_fibers((100, 100, 100), 5, None, 0.89, 20, 90, 400, segmented=True)
 
 cond_map = puma.IsotropicConductivityMap()
 cond_map.add_material((0, 0), 0.0257) # conductivity of the air
