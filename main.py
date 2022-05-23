@@ -7,8 +7,8 @@ ip, oop = 90, 20
 ws_fibers = puma.generate_random_fibers(size, r, porosity=0.89, phi=oop, theta=ip, length=400)
 
 cond_map = puma.IsotropicConductivityMap()
-cond_map.add_material((0, 1), 0.0257) # conductivity of the air
-cond_map.add_material((2, ws_fibers.max()), 12) # conductivity of carbon fibres
+cond_map.add_material((0, 89), 0.0257) # conductivity of the air
+cond_map.add_material((90, 255), 12) # conductivity of carbon fibres
 
 k_eff_z = puma.compute_thermal_conductivity(ws_fibers, cond_map, 'z', 's')[0]
 
