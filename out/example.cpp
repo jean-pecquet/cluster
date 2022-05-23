@@ -13,7 +13,7 @@ puma::Workspace ws(1e-6, false);
 // Preparing inputs for fibers generation
 RandomFibersInput input;
 input.straightCircle(100,100,100,5,0,400,0,90,90,20,false,0.89,100);
-input.print = true; // printing option can be turned off like this, ON as a default
+input.print = false; // printing option can be turned off like this, ON as a default
 
 // Generating fibers
 puma::generateRandomFibers(&ws, input);
