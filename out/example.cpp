@@ -13,7 +13,7 @@ puma::Workspace ws(1e-6, false);
 // Preparing inputs for fibers generation
 RandomFibersInput input;
 input.straightCircle(100,100,100,5,0,400,0,90,90,20,false,0.89,100);
-input.print = false; // printing option can be turned off like this, ON as a default
+input.print = true; // printing option can be turned off like this, ON as a default
 
 // Generating fibers
 puma::generateRandomFibers(&ws, input);
@@ -32,7 +32,7 @@ matCond[0] = 0.0257; // air conductivity
 matCond[1] = 12; // approximation to fiber conductivity
 
 // Running simulation in three directions
-puma::Vec3<double> kz = puma::compute_FVThermalConductivity(&ws, &T, matCond,"symmetric","cg",'z',1e-3,10000,true);
+puma::Vec3<double> kz = puma::compute_FVThermalConductivity(&ws, &T, matCond,"symmetric","bicgstab",'z',1e-3,10000,true);
 
 cout << endl << "Conductivity: " << endl;
 cout << "kzx " << kz.x << " kzy " << kz.y << " kzz " << kz.z << endl;
