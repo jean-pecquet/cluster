@@ -10,6 +10,6 @@ cond_map = puma.IsotropicConductivityMap()
 cond_map.add_material((0, 89), 0.0257) # conductivity of the air
 cond_map.add_material((90, 255), 12) # conductivity of carbon fibres
 
-k_eff_z = puma.compute_thermal_conductivity(ws_fibers, cond_map, 'z', 's')[0]
+k_eff_z = puma.compute_thermal_conductivity(ws_fibers, cond_map, 'z', 's', tolerance=1e-3, solver_type='cg')
 
 print(duration)
