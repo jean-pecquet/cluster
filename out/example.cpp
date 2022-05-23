@@ -22,8 +22,8 @@ puma::generateRandomFibers(&ws, input);
 cout << endl << "Computing the thermal conductivity using finite volume"<< endl;
 
 // Segmenting workspace by thresholding
-ws.setMaterialID(&ws,puma::Cutoff(0,89),0);
-ws.setMaterialID(&ws,puma::Cutoff(90,255),1);
+ws.setMaterialID(&ws,puma::Cutoff(0,127),0);
+ws.setMaterialID(&ws,puma::Cutoff(128,255),1);
 
 // Initializing Temperature field and material conductivity
 puma::Matrix<double> T;
